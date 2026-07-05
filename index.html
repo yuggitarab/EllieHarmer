@@ -25,6 +25,20 @@
     <a href="#contact">Contact</a>
   </nav>
 
+  <button class="hamburger" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+    <span class="hamburger__line"></span>
+    <span class="hamburger__line"></span>
+    <span class="hamburger__line"></span>
+  </button>
+
+  <nav class="mobile-menu" id="mobileMenu">
+    <a href="#about">About</a>
+    <a href="#about">Bridal</a>
+    <a href="#services">Portfolio</a>
+    <a href="#why">Why Ellie</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
   <div class="hero__tagline">
     <span class="hero__rule"></span>
     <span>Makeup Artist</span>
@@ -38,6 +52,7 @@
   <div class="hero__side-nav">
     <a href="#about">Bridal</a>
     <a href="#services">Portfolio</a>
+    <a href="#why">Why Ellie</a>
   </div>
 </header>
 
@@ -89,6 +104,7 @@
         <div class="card__quote-mark" aria-hidden="true">&#8220;</div>
         <p class="card__quote-text">Your wedding morning should feel calm, warm and organised. From the first enquiry to the final touch-up&nbsp;</p>
         <div class="card__quote-mark" aria-hidden="true">&#8221;</div>
+        <button class="btn btn--enquiry" type="button" id="bridalEnquiryBtn">Bridal enquiry</button>
       </article>
 
       <article class="card card--occasion">
@@ -190,11 +206,45 @@
 
 </main>
 
+<div class="modal" id="enquiryModal" aria-hidden="true">
+  <div class="modal__overlay" id="enquiryModalOverlay"></div>
+  <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="enquiryModalTitle">
+    <button class="modal__close" type="button" id="enquiryModalClose" aria-label="Close enquiry form">&times;</button>
+    <p class="kicker">Enquiry Form</p>
+    <h2 class="sec-title modal__title" id="enquiryModalTitle">Tell us about your day</h2>
+    <form class="modal__form" id="enquiryForm">
+      <label class="modal__field-label">
+        <span>Name</span>
+        <input class="field" type="text" name="name" required>
+      </label>
+      <label class="modal__field-label">
+        <span>Date of Wedding</span>
+        <input class="field" type="date" name="weddingDate">
+      </label>
+      <label class="modal__field-label">
+        <span>Number of People</span>
+        <input class="field" type="number" name="peopleCount" min="1">
+      </label>
+      <label class="modal__field-label">
+        <span>Location</span>
+        <input class="field" type="text" name="location">
+      </label>
+      <label class="modal__field-label">
+        <span>Additional Comments</span>
+        <textarea class="field field--textarea" name="comments" rows="4"></textarea>
+      </label>
+      <p class="modal__success" id="enquirySuccess" hidden>Thanks — your enquiry has been noted. Ellie will be in touch soon.</p>
+      <button class="btn btn--enquiry" type="submit">Send Enquiry</button>
+    </form>
+  </div>
+</div>
+
 <footer class="site-footer">
   <span>Ellie Harmer</span>
   <span>Brisbane | Gold Coast</span>
   <span>&copy; 2026</span>
 </footer>
 
+<script src="js/main.js"></script>
 </body>
 </html>
